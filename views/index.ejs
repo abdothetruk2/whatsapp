@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Send WhatsApp Message</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 2rem;
+      background-color: #f4f4f4;
+    }
+    form {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      max-width: 400px;
+      margin: auto;
+    }
+    input, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      font-size: 16px;
+    }
+    .status {
+      text-align: center;
+      margin-top: 1rem;
+      font-weight: bold;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <h2 style="text-align:center;">Send WhatsApp Message</h2>
+  <form action="/send-message" method="POST">
+    <label for="phoneNumber">Phone Number (E.164 format)</label>
+    <input type="text" name="phoneNumber" id="phoneNumber" placeholder="e.g. 15551234567" required />
+
+    <label for="message">Message</label>
+    <textarea name="message" id="message" rows="4" placeholder="Type your message here..." required></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+
+  <% if (status) { %>
+    <p class="status"><%= status %></p>
+  <% } %>
+</body>
+</html>
